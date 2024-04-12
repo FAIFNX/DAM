@@ -1,2 +1,2 @@
 # DAM
-Estudiantes
+Estos repositorios son de libre uso
