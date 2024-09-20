@@ -22,7 +22,6 @@ Soy un programador junior apasionado por el aprendizaje constante y el desarroll
 ## 💼 Proyectos Destacados
 
 ### Proyecto 1: [Nombre del proyecto]
-(https://es.vecteezy.com/arte-vectorial/9877699-pixel-art-night-sky-fondo-con-nubes-y-estrellas-para-juego-8-bit)
 
 - **Descripción:** Breve descripción de lo que hace el proyecto.
 - **Tecnologías utilizadas:** [Tecnologías principales del proyecto]
