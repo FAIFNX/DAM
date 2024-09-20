@@ -1,4 +1,4 @@
-# ¡Hola! 👋 Soy [Tu Nombre]
+# ¡Hola! 👋 Soy Pol Collantes
 
 Soy un programador junior apasionado por el aprendizaje constante y el desarrollo de soluciones creativas. Me encanta explorar nuevas tecnologías y trabajar en proyectos desafiantes. 💻🚀
 
