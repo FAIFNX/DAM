@@ -32,8 +32,7 @@ Soy un programador junior apasionado por el aprendizaje constante y el desarroll
 ## 📫 Contacto
 
 - [LinkedIn](https://www.linkedin.com/in/pol-collantes-almendro-aa126a239/)
-- [Twitter](https://twitter.com/tuusuario)
-- [Correo](pol.c.dpg@gmail.com)
+- [Correo](https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSBnNfLTLNHslZTSbspMSMNWnHXqNrkhVlqtSGpStgglvhPFrfCHjqhbDGGjpHVnhfbscfsx)
 
 ---
 
