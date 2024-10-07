@@ -1,0 +1,13 @@
+{
+    "mensaje": "Este es un nuevo objeto.",
+    "personas": [
+        {
+            "nombre": "Pau",
+            "edad": 19
+        },
+        {
+            "nombre": "Adri",
+            "edad": 19
+        }
+    ]
+}
