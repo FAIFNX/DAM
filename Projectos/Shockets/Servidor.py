@@ -37,4 +37,4 @@ def start_server(host, port):
     server_socket.close()
 
 if __name__ == "__main__":
-    start_server('localhost', 65432)  # Cambia 'localhost' por la IP de tu servidor
+    start_server('localhost', 65432)  # Cambia 'localhost' por la IP de tu servidor.
