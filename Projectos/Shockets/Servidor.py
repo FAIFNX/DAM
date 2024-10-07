@@ -1,4 +1,5 @@
 import socket
+import os
 
 def start_server(host, port):
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -14,7 +15,8 @@ def start_server(host, port):
         operation = conn.recv(1024).decode()
         if operation == "send_file":
             filename = conn.recv(1024).decode()
-            with open(filename, 'wb') as f:
+            # Guardar el archivo en el mismo directorio donde está el script
+            with open(os.path.join(os.getcwd(), filename), 'wb') as f:
                 print(f'Recibiendo archivo: {filename}')
                 while True:
                     data = conn.recv(1024)
