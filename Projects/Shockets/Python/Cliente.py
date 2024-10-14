@@ -19,7 +19,7 @@ def send_text(conn, message):
 
 def main():
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    client_socket.connect(('localhost', 65432))  # Cambia 'localhost' por la IP del servidor
+    client_socket.connect(('192.168.128.182', 12345))  # Cambia 'localhost' por la IP del servidor
 
     while True:
         option = input("Elige una opción (1: Enviar archivo, 2: Enviar texto, 3: Salir): ")

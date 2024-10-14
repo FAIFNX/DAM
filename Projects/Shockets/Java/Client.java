@@ -16,7 +16,7 @@ public class Client {
         Scanner scanner = new Scanner(System.in);
         String missatge;
 
-        try (Socket socket = new Socket("localhost", 4);
+        try (Socket socket = new Socket("192.168.128.182", 12345);
                 PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
                 BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()))) {
 
