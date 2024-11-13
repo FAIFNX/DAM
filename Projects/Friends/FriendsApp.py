@@ -1,12 +1,10 @@
+from Friends.FriendController import FriendController
+from Model.FriendModel import FriendModel
 
-from Friends.Controllers.FriendController import FriendController
-from Friends.Model.FriendModel import FriendModel
-
-class FriendsApp:
-    @staticmethod
-    def main():
-        model = FriendModel()
-        control = FriendController(model)
+def main():
+    # Instanciamos el modelo y el controlador
+    model = FriendModel()
+    control = FriendController(model)
 
 if __name__ == "__main__":
-    FriendsApp.main()
+    main()
