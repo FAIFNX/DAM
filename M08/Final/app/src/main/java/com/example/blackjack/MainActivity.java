@@ -560,9 +560,30 @@ public class MainActivity extends AppCompatActivity {
 
     // Mostrar el diálogo "About"
     private void showAboutDialog() {
+        // Crea un contenedor para la imagen y el texto
+        LinearLayout layout = new LinearLayout(this);
+        layout.setOrientation(LinearLayout.VERTICAL);
+        layout.setPadding(50, 20, 50, 20); // Espaciado opcional
+
+        // Añade la imagen al contenedor
+        ImageView imageView = new ImageView(this);
+        imageView.setImageResource(R.drawable.foto); // Asegúrate de que "foto.jpg" esté en res/drawable
+        imageView.setLayoutParams(new LinearLayout.LayoutParams(300, 300)); // Tamaño de la imagen
+        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        layout.addView(imageView);
+
+        // Añade el texto al contenedor
+        TextView textView = new TextView(this);
+        textView.setText("Aplicació feta per Pol_Collantes");
+        textView.setTextSize(16);
+        textView.setPadding(0, 20, 0, 0); // Espaciado opcional
+        textView.setGravity(Gravity.CENTER);
+        layout.addView(textView);
+
+        // Crea y muestra el diálogo
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("About")
-                .setMessage("Aplicació feta per Pol_Collantes")
+                .setView(layout)
                 .setPositiveButton("OK", (dialog, which) -> dialog.dismiss())
                 .show();
     }
