@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="Tmoney" type="id"/>
+    <item name="Ucontador" type="id"/>
+    <item name="textoapuesta" type="id"/>
+    <item name="linearLayout" type="id"/>
+    <item name="linearLayout2" type="id"/>
+    <item name="Text_Dealer" type="id"/>
+    <item name="Cmoney" type="id"/>
+    <item name="Dcontador" type="id"/>
+    <item name="Bstand" type="id"/>
+    <item name="Bcard" type="id"/>
+    <item name="Tplayer" type="id"/>
+</resources>

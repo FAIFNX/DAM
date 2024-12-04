@@ -1,0 +1,17 @@
+C:\Users\Pol\source\repos\Pt3.3\Pt3.3\obj\Debug\net8.0-windows\Pt3._3.Form1.resources
+C:\Users\Pol\source\repos\Pt3.3\Pt3.3\obj\Debug\net8.0-windows\Pt3.3.csproj.GenerateResource.cache
+C:\Users\Pol\source\repos\Pt3.3\Pt3.3\obj\Debug\net8.0-windows\Pt3.3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Pol\source\repos\Pt3.3\Pt3.3\obj\Debug\net8.0-windows\Pt3.3.AssemblyInfoInputs.cache
+C:\Users\Pol\source\repos\Pt3.3\Pt3.3\obj\Debug\net8.0-windows\Pt3.3.AssemblyInfo.cs
+C:\Users\Pol\source\repos\Pt3.3\Pt3.3\obj\Debug\net8.0-windows\Pt3.3.csproj.CoreCompileInputs.cache
+C:\Users\Pol\source\repos\Pt3.3\Pt3.3\bin\Debug\net8.0-windows\Pt3.3.exe
+C:\Users\Pol\source\repos\Pt3.3\Pt3.3\bin\Debug\net8.0-windows\Pt3.3.deps.json
+C:\Users\Pol\source\repos\Pt3.3\Pt3.3\bin\Debug\net8.0-windows\Pt3.3.runtimeconfig.json
+C:\Users\Pol\source\repos\Pt3.3\Pt3.3\bin\Debug\net8.0-windows\Pt3.3.dll
+C:\Users\Pol\source\repos\Pt3.3\Pt3.3\bin\Debug\net8.0-windows\Pt3.3.pdb
+C:\Users\Pol\source\repos\Pt3.3\Pt3.3\obj\Debug\net8.0-windows\Pt3.3.dll
+C:\Users\Pol\source\repos\Pt3.3\Pt3.3\obj\Debug\net8.0-windows\refint\Pt3.3.dll
+C:\Users\Pol\source\repos\Pt3.3\Pt3.3\obj\Debug\net8.0-windows\Pt3.3.pdb
+C:\Users\Pol\source\repos\Pt3.3\Pt3.3\obj\Debug\net8.0-windows\Pt3.3.genruntimeconfig.cache
+C:\Users\Pol\source\repos\Pt3.3\Pt3.3\obj\Debug\net8.0-windows\ref\Pt3.3.dll
+C:\Users\Pol\source\repos\Pt3.3\Pt3.3\obj\Debug\net8.0-windows\Pt3._3.Properties.Resources.resources
