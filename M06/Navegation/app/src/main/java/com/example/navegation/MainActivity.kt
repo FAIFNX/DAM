@@ -37,7 +37,7 @@ fun App() {
     val controller = rememberNavController()
     NavHost(controller, startDestination = HomeRoute) {
         composable<HomeRoute> { HomeScreen(controller) }
-        composable<CityRoute> { CityScreen() }
+        composable<CityRoute> { backStackEntry ->  CityScreen(backStackEntry.toRoute())}
     }
 }
 
@@ -49,16 +49,39 @@ fun HomeScreen(controller: NavController) {
 
     Column {
         Text("Home")
-        Button(onClick = {controller.navigate(CityRoute)}) {
+        Button(onClick = {controller.navigate(CityRoute("Madrid"))}) {
             Text("City")
+
+        }
+        Button(onClick = { controller.navigate(CountryRoute("Spain")) }) {
+            Text("Country")
+
         }
     }
 }
 
 @Serializable
-object CityRoute
+data class CityRoute(val name: String)
+data class CountryRoute(val name: String)
+
 
 @Composable
-fun CityScreen() {
-    Text("Barcelona")
+fun CityScreen(route: CityRoute) {
+    Text(route.name)
 }
+
+/*
+@Composable
+fun CountryScreen(controller: NavController)
+{
+    Text("Spain")
+    Button(onClick = {controller.navigate(CityRoute)}) {
+        Column {
+            Text("City")
+            Button(onClick = { controller.navigate(CityRoute) }) {
+                "City"
+            }
+        }
+    }
+}
+ */
