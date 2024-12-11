@@ -35,6 +35,7 @@ fun App() {
         NavHost(controller, startDestination = HomeRoute){
             composable<HomeRoute> {HomeScreen(controller)}
             composable<CityRoute> { CityScreen() }
+            composable<CountryRoute> { CountryScreen(controller) }
         }
 
        /*
@@ -57,7 +58,12 @@ fun Conversation(messages: List<Message>) {
 //Creación de objetos, listas, otros
 @Serializable
 object HomeRoute
+
+@Serializable
 object CityRoute
+
+@Serializable
+object CountryRoute
 
 data class Message(val author: String, val body: String)
 val messages = listOf(
@@ -83,20 +89,47 @@ val messages = listOf(
 @Composable
 fun HomeScreen(controller: NavController)
 {
-    Column {
-        Text("Home")
-        Button(onClick = {controller.navigate(CityRoute)}){
-            Text("City")
+    Row (modifier = Modifier.padding(10.dp)){
+        Column(modifier = Modifier.padding(10.dp)) {
+            Text("Buttons")
         }
+        Row {
+            Button(onClick = {controller.navigate(CityRoute)}) {
+                Text("City")
+            }
+            Spacer(modifier = Modifier.padding(5.dp))
+            Button(onClick = {controller.navigate(CountryRoute)}) {
+                Text("Country")
+            }
+        }
+
     }
+
 }
 
 @Composable
 fun CityScreen()
 {
-    Text("Barcelona")
+    Column(modifier = Modifier.padding(10.dp)) {
+        Text("Barcelona")
+    }
 }
 
+@Composable
+fun CountryScreen(controller: NavController)
+{
+    Row{
+        Column(modifier = Modifier.padding(10.dp)) {
+            Text("España")
+        }
+        Row {
+            Button(onClick = {controller.navigate(CityRoute)}) {
+                Text("City")
+            }
+        }
+    }
+
+}
 
 @Preview
 @Composable
