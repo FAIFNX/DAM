@@ -1,0 +1,206 @@
+[
+    {
+        "merged": "com.example.blackjack.app-debug-31:/drawable_c10.png.flat",
+        "source": "com.example.blackjack.app-main-33:/drawable/c10.png"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.blackjack.app-main-33:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.blackjack.app-main-33:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.blackjack.app-main-33:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.blackjack.app-main-33:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.example.blackjack.app-main-33:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/xml_backup_rules.xml.flat",
+        "source": "com.example.blackjack.app-main-33:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.example.blackjack.app-main-33:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/drawable_ic_about.xml.flat",
+        "source": "com.example.blackjack.app-main-33:/drawable/ic_about.xml"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/drawable_foto.jpg.flat",
+        "source": "com.example.blackjack.app-main-33:/drawable/foto.jpg"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/drawable_a.png.flat",
+        "source": "com.example.blackjack.app-main-33:/drawable/a.png"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/drawable_c5.png.flat",
+        "source": "com.example.blackjack.app-main-33:/drawable/c5.png"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/drawable_k.png.flat",
+        "source": "com.example.blackjack.app-main-33:/drawable/k.png"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.blackjack.app-main-33:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.blackjack.app-main-33:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/drawable_c2.png.flat",
+        "source": "com.example.blackjack.app-main-33:/drawable/c2.png"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.blackjack.app-main-33:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.blackjack.app-main-33:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/drawable_c9.png.flat",
+        "source": "com.example.blackjack.app-main-33:/drawable/c9.png"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/drawable_ic_quit.xml.flat",
+        "source": "com.example.blackjack.app-main-33:/drawable/ic_quit.xml"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/drawable_spades.png.flat",
+        "source": "com.example.blackjack.app-main-33:/drawable/spades.png"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/drawable_c6.png.flat",
+        "source": "com.example.blackjack.app-main-33:/drawable/c6.png"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.blackjack.app-main-33:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/drawable_background.jpg.flat",
+        "source": "com.example.blackjack.app-main-33:/drawable/background.jpg"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.blackjack.app-main-33:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/drawable_logoapp.png.flat",
+        "source": "com.example.blackjack.app-main-33:/drawable/logoapp.png"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/layout_activity_main_inicio.xml.flat",
+        "source": "com.example.blackjack.app-main-33:/layout/activity_main_inicio.xml"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/drawable_c7.png.flat",
+        "source": "com.example.blackjack.app-main-33:/drawable/c7.png"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/drawable_c3.png.flat",
+        "source": "com.example.blackjack.app-main-33:/drawable/c3.png"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.example.blackjack.app-main-33:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.example.blackjack.app-main-33:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/drawable_border_yellow.png.flat",
+        "source": "com.example.blackjack.app-main-33:/drawable/border_yellow.png"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/drawable_background_brown.jpg.flat",
+        "source": "com.example.blackjack.app-main-33:/drawable/background_brown.jpg"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/drawable_hearts.png.flat",
+        "source": "com.example.blackjack.app-main-33:/drawable/hearts.png"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/drawable_c4.png.flat",
+        "source": "com.example.blackjack.app-main-33:/drawable/c4.png"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.blackjack.app-main-33:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/drawable_fondo.jpg.flat",
+        "source": "com.example.blackjack.app-main-33:/drawable/fondo.jpg"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/layout_activity_main.xml.flat",
+        "source": "com.example.blackjack.app-main-33:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/drawable_back.png.flat",
+        "source": "com.example.blackjack.app-main-33:/drawable/back.png"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/drawable_clubs.png.flat",
+        "source": "com.example.blackjack.app-main-33:/drawable/clubs.png"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/drawable_ic_game.xml.flat",
+        "source": "com.example.blackjack.app-main-33:/drawable/ic_game.xml"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/drawable_c8.png.flat",
+        "source": "com.example.blackjack.app-main-33:/drawable/c8.png"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/drawable_c1.png.flat",
+        "source": "com.example.blackjack.app-main-33:/drawable/c1.png"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/drawable_ic_settings.xml.flat",
+        "source": "com.example.blackjack.app-main-33:/drawable/ic_settings.xml"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/drawable_diamond.png.flat",
+        "source": "com.example.blackjack.app-main-33:/drawable/diamond.png"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/drawable_baseline_settings_24.xml.flat",
+        "source": "com.example.blackjack.app-main-33:/drawable/baseline_settings_24.xml"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/layout_activity_main_settings.xml.flat",
+        "source": "com.example.blackjack.app-main-33:/layout/activity_main_settings.xml"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/drawable_j.png.flat",
+        "source": "com.example.blackjack.app-main-33:/drawable/j.png"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/drawable_q.png.flat",
+        "source": "com.example.blackjack.app-main-33:/drawable/q.png"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/drawable_front.png.flat",
+        "source": "com.example.blackjack.app-main-33:/drawable/front.png"
+    },
+    {
+        "merged": "com.example.blackjack.app-debug-31:/menu_main_menu.xml.flat",
+        "source": "com.example.blackjack.app-main-33:/menu/main_menu.xml"
+    }
+]

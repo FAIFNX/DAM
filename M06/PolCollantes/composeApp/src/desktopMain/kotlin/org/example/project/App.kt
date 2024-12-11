@@ -16,6 +16,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import kotlinx.serialization.Serializable
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import polcollantes.composeapp.generated.resources.Res
@@ -26,10 +31,18 @@ import polcollantes.composeapp.generated.resources.imagen
 @Preview
 fun App() {
     MaterialTheme {
-       Surface (modifier = Modifier.fillMaxSize()){
+        val controller = rememberNavController()
+        NavHost(controller, startDestination = HomeRoute){
+            composable<HomeRoute> {HomeScreen(controller)}
+            composable<CityRoute> { CityScreen() }
+        }
+
+       /*
+        Surface (modifier = Modifier.fillMaxSize()){
            //MessageCard(Message("Eva", "Buenas noches señorita"))
-           Conversation(messages)
+           //Conversation(messages)
        }
+        */
 
     }
 }
@@ -40,6 +53,11 @@ fun Conversation(messages: List<Message>) {
         items (messages){ messages -> MessageCard(messages) }
     }
 }
+
+//Creación de objetos, listas, otros
+@Serializable
+object HomeRoute
+object CityRoute
 
 data class Message(val author: String, val body: String)
 val messages = listOf(
@@ -60,6 +78,24 @@ val messages = listOf(
         "Fa trenta anys, les persones riques de Catalunya feien el viatge de noces a Madrid. Avui van a París o a Niça i de vegades a Itàlia. La lluna de mel, però, és un mal temps per veure res i per formar-se. No es poden pas fer dues coses importants a la vegada. El pitjor temps, potser, per a viatjar, de la vida, és la temporada de la lluna de mel."
     ),
 )
+
+//Ventanas
+@Composable
+fun HomeScreen(controller: NavController)
+{
+    Column {
+        Text("Home")
+        Button(onClick = {controller.navigate(CityRoute)}){
+            Text("City")
+        }
+    }
+}
+
+@Composable
+fun CityScreen()
+{
+    Text("Barcelona")
+}
 
 
 @Preview
