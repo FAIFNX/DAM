@@ -68,6 +68,7 @@ fun App(sqlDriver: SqlDriver) {
             composable<HomeRoute> { HomeScreen(controller) }
             composable<GameRoute> { GameScreen(dataBase, controller) }
             composable<PlayerRoute> { PlayerScreen(controller, dataBase) }
+            composable<InsertRoute> { InsertScreen(controller, dataBase) }
         }
     }
 }
@@ -81,6 +82,9 @@ object GameRoute
 
 @Serializable
 object PlayerRoute
+
+@Serializable
+object InsertRoute
 
 //Ventanas
 @Composable
@@ -156,5 +160,13 @@ fun PlayerScreen(controller: NavController, database: Database)
         ) {
             Text("Home")
         }
+    }
+}
+
+@Composable
+fun InsertScreen(controller: NavController, database: Database)
+{
+    Row{
+        //ToDo
     }
 }
