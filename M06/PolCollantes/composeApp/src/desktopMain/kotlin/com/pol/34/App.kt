@@ -36,22 +36,39 @@ object DatabaseConfig {
 }
 
 //Insert
-fun insertarDatos(database: Database)
-{
-    database.gameQueries.insert(1, "Maincraft")
-    database.gameQueries.insert(2, "League of legens")
+fun insertarDatos(database: Database) {
+    val games = database.gameQueries.selectAll().executeAsList()
+    if (games.isEmpty()) {
+        database.gameQueries.insert("Minecraft")
+        database.gameQueries.insert("League of Legends")
+    } else {
+        database.gameQueries.deleteAll()
+        database.gameQueries.insert("Minecraft")
+        database.gameQueries.insert("League of Legends")
+    }
+
+    val players = database.playerQueries.selectAll().executeAsList()
+    if (players.isEmpty()) {
+        database.playerQueries.insert("Pol", "Collantes", 1)
+    } else {
+        database.playerQueries.deleteAll()
+        database.playerQueries.insert("Pol", "Collantes", 1)
+    }
 }
+
 
 @Composable
 @Preview
 fun App(sqlDriver: SqlDriver) {
     MaterialTheme {
         val dataBase = Database(sqlDriver)
+        Database.Schema.create(sqlDriver)
         val controller = rememberNavController()
+        insertarDatos(dataBase)
         NavHost(controller, startDestination = HomeRoute){
             composable<HomeRoute> { HomeScreen(controller) }
-            composable<CityRoute> { CityScreen(dataBase) }
-            composable<CountryRoute> { CountryScreen(controller) }
+            composable<GameRoute> { GameScreen(dataBase, controller) }
+            composable<PlayerRoute> { PlayerScreen(controller, dataBase) }
         }
 
        /*
@@ -75,10 +92,10 @@ fun Conversation(messages: List<Message>) {
 object HomeRoute
 
 @Serializable
-object CityRoute
+object GameRoute
 
 @Serializable
-object CountryRoute
+object PlayerRoute
 
 data class Message(val author: String, val body: String)
 val messages = listOf(
@@ -109,12 +126,12 @@ fun HomeScreen(controller: NavController)
             Text("Buttons")
         }
         Row {
-            Button(onClick = {controller.navigate(CityRoute)}) {
-                Text("City")
+            Button(onClick = {controller.navigate(GameRoute)}) {
+                Text("Games")
             }
             Spacer(modifier = Modifier.padding(5.dp))
-            Button(onClick = {controller.navigate(CountryRoute)}) {
-                Text("Country")
+            Button(onClick = {controller.navigate(PlayerRoute)}) {
+                Text("Players")
             }
         }
 
@@ -123,25 +140,41 @@ fun HomeScreen(controller: NavController)
 }
 
 @Composable
-fun CityScreen(database: Database)
+fun GameScreen(database: Database, controller: NavController)
 {
-    val game = database.gameQueries.selectById(1)
+    val game = database.gameQueries.selectAll().executeAsList()
     Column(modifier = Modifier.padding(10.dp)) {
-        Text("" + game)
+        LazyColumn { items(game) {game -> Text(game.name)} }
+    }
+    Box(modifier = Modifier.fillMaxSize()) {
+        Button(
+            onClick = { controller.navigate("HomeRoute") },
+            modifier = Modifier
+                .padding(16.dp) // Espaciado
+                .align(Alignment.BottomEnd) // Alineación en la parte inferior derecha
+        ) {
+            Text("Home")
+        }
     }
 }
 
 @Composable
-fun CountryScreen(controller: NavController)
+fun PlayerScreen(controller: NavController, database: Database)
 {
+    val player = database.playerQueries.selectById(1).executeAsOne()
     Row{
         Column(modifier = Modifier.padding(10.dp)) {
-            Text("España")
+            Text(player.name)
         }
-        Row {
-            Button(onClick = {controller.navigate(CityRoute)}) {
-                Text("City")
-            }
+    }
+    Box(modifier = Modifier.fillMaxSize()) {
+        Button(
+            onClick = { controller.navigate("HomeRoute") },
+            modifier = Modifier
+                .padding(16.dp) // Espaciado
+                .align(Alignment.BottomEnd) // Alineación en la parte inferior derecha
+        ) {
+            Text("Home")
         }
     }
 

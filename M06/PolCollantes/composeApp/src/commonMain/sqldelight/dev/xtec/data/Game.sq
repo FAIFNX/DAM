@@ -1,11 +1,16 @@
-CREATE TABLE IF NOT EXISTS Games
-(
-    id INTEGER PRIMARY KEY,
-    name TEXT
+CREATE TABLE IF NOT EXISTS Games (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL
 );
+
+selectAll:
+SELECT * FROM Games;
 
 selectById:
 SELECT * FROM Games WHERE id = ?;
 
 insert:
-INSERT INTO Games(id, name) VALUES (?,?);
+INSERT INTO Games(name) VALUES (?);
+
+deleteAll:
+DELETE FROM Games;
