@@ -2,15 +2,14 @@ package com.pol.`34`
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.Button
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.compose.material.*
+import androidx.compose.ui.graphics.Color
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -70,20 +69,6 @@ fun App(sqlDriver: SqlDriver) {
             composable<GameRoute> { GameScreen(dataBase, controller) }
             composable<PlayerRoute> { PlayerScreen(controller, dataBase) }
         }
-
-       /*
-        Surface (modifier = Modifier.fillMaxSize()){
-           //MessageCard(Message("Eva", "Buenas noches señorita"))
-           //Conversation(messages)
-       }
-        */
-    }
-}
-
-@Composable
-fun Conversation(messages: List<Message>) {
-    LazyColumn {
-        items (messages){ messages -> MessageCard(messages) }
     }
 }
 
@@ -97,36 +82,22 @@ object GameRoute
 @Serializable
 object PlayerRoute
 
-data class Message(val author: String, val body: String)
-val messages = listOf(
-    Message(
-        "Josep Pla",
-        "Antigament, el viatjar era un privilegi de gran senyor. Generalment, era la coronació normal dels estudis d'un home. Ara el viatjar s'ha generalitzat i democratitzat considerablement. Viatja molta gent"
-    ),
-    Message(
-        "Josep Pla",
-        "Però, potser, les persones que viatgen per arrodonir i afermar la seva visió del món i dels homes són més rares avui que fa cent anys. "
-    ),
-    Message(
-        "Josep Pla",
-        "En el nostre país hi ha tres pretextos essencials per a passar la frontera: la peregrinació a Lourdes, la lluna de mel i els negocis. Hom no pot tenir idea de la quantitat de gent del nostre país que ha estat a Lourdes. És incomptable. "
-    ),
-    Message(
-        "Josep Pla",
-        "Fa trenta anys, les persones riques de Catalunya feien el viatge de noces a Madrid. Avui van a París o a Niça i de vegades a Itàlia. La lluna de mel, però, és un mal temps per veure res i per formar-se. No es poden pas fer dues coses importants a la vegada. El pitjor temps, potser, per a viatjar, de la vida, és la temporada de la lluna de mel."
-    ),
-)
-
 //Ventanas
 @Composable
 fun HomeScreen(controller: NavController)
 {
     Row (modifier = Modifier.padding(10.dp)){
         Column(modifier = Modifier.padding(10.dp)) {
-            Text("Buttons")
+            Text("Options:")
         }
         Row {
-            Button(onClick = {controller.navigate(GameRoute)}) {
+            Button(
+                onClick = { controller.navigate(GameRoute) },
+                colors = ButtonDefaults.buttonColors(
+                    backgroundColor = Color(0xFFE0E0E0), // Color de fondo del botón
+                    contentColor = Color(0xFFFFABAB) // Color del texto dentro del botón (rojo pastel)
+                )
+            ) {
                 Text("Games")
             }
             Spacer(modifier = Modifier.padding(5.dp))
@@ -148,7 +119,7 @@ fun GameScreen(database: Database, controller: NavController)
     }
     Box(modifier = Modifier.fillMaxSize()) {
         Button(
-            onClick = { controller.navigate("HomeRoute") },
+            onClick = { controller.navigate(HomeRoute) },
             modifier = Modifier
                 .padding(16.dp) // Espaciado
                 .align(Alignment.BottomEnd) // Alineación en la parte inferior derecha
@@ -162,14 +133,23 @@ fun GameScreen(database: Database, controller: NavController)
 fun PlayerScreen(controller: NavController, database: Database)
 {
     val player = database.playerQueries.selectById(1).executeAsOne()
+    val game = player.Games?.let { gameId ->
+        database.gameQueries.selectById(gameId).executeAsOneOrNull()
+    }
     Row{
         Column(modifier = Modifier.padding(10.dp)) {
-            Text(player.name)
+            if (game != null) {
+                Text("${player.name} : ${game.name}")
+            }
+            else
+            {
+                Text("${player.name} doesn't have a game.")
+            }
         }
     }
     Box(modifier = Modifier.fillMaxSize()) {
         Button(
-            onClick = { controller.navigate("HomeRoute") },
+            onClick = { controller.navigate(HomeRoute) },
             modifier = Modifier
                 .padding(16.dp) // Espaciado
                 .align(Alignment.BottomEnd) // Alineación en la parte inferior derecha
@@ -177,38 +157,4 @@ fun PlayerScreen(controller: NavController, database: Database)
             Text("Home")
         }
     }
-
-}
-
-@Preview
-@Composable
-fun MessageCard(msg: Message)
-{
-    Row(modifier = Modifier.padding(all = 16.dp)) {
-        Image(
-            painter = painterResource(Res.drawable.imagen),
-            contentDescription = "contact profile picture",
-            modifier = Modifier
-            //Size
-            .size(100.dp)
-            .clip(CircleShape)
-            .border(3.dp, MaterialTheme.colors.secondary, CircleShape)
-        )
-        Spacer(modifier = Modifier.width(16.dp))
-        Column {
-            Text(
-                text = msg.author, color = MaterialTheme.colors.secondary,
-                style = MaterialTheme.typography.h2
-            )
-            Spacer(modifier = Modifier.height(8.dp))
-            Surface(shape = MaterialTheme.shapes.large) {
-                Text(
-                    text = msg.body,
-                    modifier = Modifier.padding(all = 4.dp),
-                    style = MaterialTheme.typography.body1
-                )
-            }
-        }
-    }
-
 }
