@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS Games
+(
+    id INTEGER PRIMARY KEY,
+    name TEXT
+);
+
+selectById:
+SELECT * FROM Games WHERE id = ?;
+
+insert:
+INSERT INTO Games(id, name) VALUES (?,?);

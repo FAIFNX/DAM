@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS Player(
+    id INTEGER PRIMARY KEY ,
+    name TEXT NOT NULL,
+    surname TEXT NOT NULL
+);
+
+selectAll:
+SELECT * FROM Player;
+
+slectById:
+SELECT * FROM Player WHERE (id);

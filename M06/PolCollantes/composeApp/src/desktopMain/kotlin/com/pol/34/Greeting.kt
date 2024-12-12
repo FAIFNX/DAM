@@ -1,4 +1,4 @@
-package org.example.project
+package com.pol.`34`
 
 class Greeting {
     private val platform = getPlatform()

@@ -1,4 +1,4 @@
-package org.example.project
+package com.pol.`34`
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
@@ -20,6 +20,9 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import app.cash.sqldelight.db.SqlDriver
+import dev.xtec.data.Database
+import dev.xtec.data.Games
 import kotlinx.serialization.Serializable
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
@@ -27,14 +30,27 @@ import polcollantes.composeapp.generated.resources.Res
 import polcollantes.composeapp.generated.resources.compose_multiplatform
 import polcollantes.composeapp.generated.resources.imagen
 
+object DatabaseConfig {
+    val name: String = "Games.db"
+    val development: Boolean = true
+}
+
+//Insert
+fun insertarDatos(database: Database)
+{
+    database.gameQueries.insert(1, "Maincraft")
+    database.gameQueries.insert(2, "League of legens")
+}
+
 @Composable
 @Preview
-fun App() {
+fun App(sqlDriver: SqlDriver) {
     MaterialTheme {
+        val dataBase = Database(sqlDriver)
         val controller = rememberNavController()
         NavHost(controller, startDestination = HomeRoute){
-            composable<HomeRoute> {HomeScreen(controller)}
-            composable<CityRoute> { CityScreen() }
+            composable<HomeRoute> { HomeScreen(controller) }
+            composable<CityRoute> { CityScreen(dataBase) }
             composable<CountryRoute> { CountryScreen(controller) }
         }
 
@@ -44,7 +60,6 @@ fun App() {
            //Conversation(messages)
        }
         */
-
     }
 }
 
@@ -108,10 +123,11 @@ fun HomeScreen(controller: NavController)
 }
 
 @Composable
-fun CityScreen()
+fun CityScreen(database: Database)
 {
+    val game = database.gameQueries.selectById(1)
     Column(modifier = Modifier.padding(10.dp)) {
-        Text("Barcelona")
+        Text("" + game)
     }
 }
 
