@@ -6,19 +6,19 @@
         xmlns:local="clr-namespace:Pt5._1"
         mc:Ignorable="d"
         Title="DeleteRecordWindow" Height="452" Width="453">
-    <Grid Margin="0,0,0,-6">
-        <Label x:Name="IdText" Content="Id&#xD;&#xA;" HorizontalAlignment="Left" Margin="171,32,0,0" VerticalAlignment="Top" Height="26"/>
-        <TextBox x:Name="textId" HorizontalAlignment="Center" Margin="0,36,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="60" TextChanged="textId_TextChanged"/>
-        <Button x:Name="buttonBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="178,76,0,0" VerticalAlignment="Top" Height="21" Width="78" Click="buttonBuscar_Click"/>
-        <Label Content="Nombre" HorizontalAlignment="Left" Margin="78,126,0,0" VerticalAlignment="Top"/>
-        <Label Content="Apellido&#xA;" HorizontalAlignment="Left" Margin="78,195,0,0" VerticalAlignment="Top"/>
-        <Label Content="Direccion&#xA;" HorizontalAlignment="Left" Margin="78,261,0,0" VerticalAlignment="Top"/>
-        <Label Content="Telefono" HorizontalAlignment="Left" Margin="78,325,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="NombreTextBox" MaxLength="25"  HorizontalAlignment="Left" Margin="157,130,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="119" IsEnabled="False"/>
-        <TextBox x:Name="ApellidoTextBox" MaxLength="35"  HorizontalAlignment="Left" Margin="157,198,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"  IsEnabled="False"/>
-        <TextBox x:Name="DireccionTextBox" MaxLength="50" HorizontalAlignment="Left" Margin="157,264,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"  IsEnabled="False"/>
-        <TextBox x:Name="TelefonoTextBox" MaxLength="11"  HorizontalAlignment="Left" Margin="157,329,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"  IsEnabled="False"/>
-        <Button x:Name="buttonDelete" Content="Eliminar" HorizontalAlignment="Center" Margin="0,390,0,0" VerticalAlignment="Top"  Height="21" Width="78" Click="buttonDelete_Click"/>
+    <Grid Margin="0,0,0,-6" Background="#FFE6DDDD">
+        <Label x:Name="IdText" Content="Id&#xD;&#xA;" HorizontalAlignment="Left" Margin="27,17,0,0" VerticalAlignment="Top" Height="26"/>
+        <TextBox x:Name="textId" HorizontalAlignment="Left"   VerticalContentAlignment="Center" Margin="53,21,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="60" TextChanged="textId_TextChanged"/>
+        <Button x:Name="buttonBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="129,19,0,0" VerticalAlignment="Top" Height="21" Width="78" Click="buttonBuscar_Click" Background="#FFEAF6FF"/>
+        <Label Content="Nombre" HorizontalAlignment="Left" Margin="124,107,0,0" VerticalAlignment="Top"/>
+        <Label Content="Apellido&#xA;" HorizontalAlignment="Left" Margin="124,176,0,0" VerticalAlignment="Top"/>
+        <Label Content="Direccion&#xA;" HorizontalAlignment="Left" Margin="124,242,0,0" VerticalAlignment="Top"/>
+        <Label Content="Telefono" HorizontalAlignment="Left" Margin="124,306,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="NombreTextBox" MaxLength="25"  HorizontalAlignment="Left" Margin="202,111,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <TextBox x:Name="ApellidoTextBox" MaxLength="35"  HorizontalAlignment="Left" Margin="202,179,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"  IsEnabled="False"/>
+        <TextBox x:Name="DireccionTextBox" MaxLength="50" HorizontalAlignment="Left" Margin="202,245,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"  IsEnabled="False"/>
+        <TextBox x:Name="TelefonoTextBox" MaxLength="11"  HorizontalAlignment="Left" Margin="202,310,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"  IsEnabled="False"/>
+        <Button x:Name="buttonDelete" Content="Eliminar" HorizontalAlignment="Left" Margin="192,376,0,0" VerticalAlignment="Top"  Height="21" Width="78" Click="buttonDelete_Click" Background="#FFEAF6FF"/>
 
     </Grid>
 </Window>
