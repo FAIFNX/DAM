@@ -6,18 +6,18 @@
         xmlns:local="clr-namespace:Pt5._1"
         mc:Ignorable="d"
         Title="AddRecordWindow" Height="497" Width="461">
-    <Grid Margin="0,0,0,-6">
+    <Grid Margin="0,0,0,-6" Background="#FFE6DDDD">
         <Label Content="Nombre" HorizontalAlignment="Left" Margin="137,95,0,0" VerticalAlignment="Top"/>
         <Label Content="Apellido&#xD;&#xA;" HorizontalAlignment="Left" Margin="137,164,0,0" VerticalAlignment="Top"/>
         <Label Content="Direccion&#xA;" HorizontalAlignment="Left" Margin="137,230,0,0" VerticalAlignment="Top"/>
         <Label Content="Telefono" HorizontalAlignment="Left" Margin="137,294,0,0" VerticalAlignment="Top"/>
-        <Label Content="Id&#xD;&#xA;" HorizontalAlignment="Left" Margin="384,17,0,0" VerticalAlignment="Top" Height="26"/>
-        <TextBox x:Name="IdClientTextBox" HorizontalAlignment="Left" Margin="419,21,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="20" TextChanged="TextBox_TextChanged" IsEnabled="False"/>
+        <Label Content="Id&#xD;&#xA;" HorizontalAlignment="Left" Margin="394,17,0,0" VerticalAlignment="Top" Height="26"/>
+        <TextBox x:Name="IdClientTextBox" HorizontalAlignment="Left"  VerticalContentAlignment="Center" Margin="414,21,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="20" TextChanged="TextBox_TextChanged" IsEnabled="False"/>
         <TextBox x:Name="TextNombre" MaxLength="25" PreviewTextInput="TextNombre_PreviewTextInput" HorizontalAlignment="Left" Margin="216,99,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="119"/>
         <TextBox x:Name="TextApellido" MaxLength="35" PreviewTextInput="TextApellido_PreviewTextInput" HorizontalAlignment="Left" Margin="216,167,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TextApellido_TextChanged"/>
         <TextBox x:Name="TextDireccion" MaxLength="50" HorizontalAlignment="Left" Margin="216,233,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TextDireccion_TextChanged"/>
         <TextBox x:Name="TextTelefono" MaxLength="11" PreviewTextInput="TextTelefono_PreviewTextInput" HorizontalAlignment="Left" Margin="216,298,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TextTelefono_TextChanged"/>
-        <Button Content="Añadir" HorizontalAlignment="Center" Margin="0,380,0,0" VerticalAlignment="Top" Height="30" Width="60" ButtonBase.Click="Button_Click"/>
+        <Button Content="Añadir" HorizontalAlignment="Center" Margin="0,380,0,0" VerticalAlignment="Top" Height="30" Width="60" ButtonBase.Click="Button_Click" Background="#FFEAF6FF"/>
 
     </Grid>
 </Window>

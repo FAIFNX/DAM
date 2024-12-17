@@ -20,6 +20,7 @@ namespace Pt5._1
     /// </summary>
     public partial class AddRecordWindow : Window
     {
+        //Se que tenia que cambiarlo pero no me acuerdo lo que tenia que poner para que funcionara en tu base de datos, perdona
         private string connectionString = "Server=localhost;Database=Pt5.1;Uid=pol;Pwd=123;";
 
         public AddRecordWindow()
