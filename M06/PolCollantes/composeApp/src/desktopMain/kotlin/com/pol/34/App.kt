@@ -1,19 +1,14 @@
 package com.pol.`34`
 
-import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.*
 import androidx.compose.ui.graphics.Color
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
@@ -21,13 +16,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import app.cash.sqldelight.db.SqlDriver
 import dev.xtec.data.Database
-import dev.xtec.data.Games
 import kotlinx.serialization.Serializable
-import org.jetbrains.compose.resources.painterResource
-import org.jetbrains.compose.ui.tooling.preview.Preview
-import polcollantes.composeapp.generated.resources.Res
-import polcollantes.composeapp.generated.resources.compose_multiplatform
-import polcollantes.composeapp.generated.resources.imagen
 
 object DatabaseConfig {
     val name: String = "Games.db"
@@ -49,15 +38,16 @@ fun insertarDatos(database: Database) {
     val players = database.playerQueries.selectAll().executeAsList()
     if (players.isEmpty()) {
         database.playerQueries.insert("Pol", "Collantes", 1)
+        database.playerQueries.insert("Pau", "Lopez", 2)
     } else {
         database.playerQueries.deleteAll()
         database.playerQueries.insert("Pol", "Collantes", 1)
+        database.playerQueries.insert("Pau", "Lopez", 2)
     }
 }
 
 
 @Composable
-@Preview
 fun App(sqlDriver: SqlDriver) {
     MaterialTheme {
         val dataBase = Database(sqlDriver)
@@ -69,6 +59,12 @@ fun App(sqlDriver: SqlDriver) {
             composable<GameRoute> { GameScreen(dataBase, controller) }
             composable<PlayerRoute> { PlayerScreen(controller, dataBase) }
             composable<InsertRoute> { InsertScreen(controller, dataBase) }
+            composable("player/{gameId}") { backStackEntry ->
+                val gameId = backStackEntry.arguments?.getString("gameId")?.toInt()
+                gameId?.let {
+                    PlayerScreen(controller, dataBase)
+                }
+            }
         }
     }
 }
@@ -120,7 +116,7 @@ fun GameScreen(database: Database, controller: NavController) {
 
     Column(modifier = Modifier.padding(10.dp)) {
         LazyColumn {
-            items(games) { game ->
+            items(games, key = { it.id }) { game ->
                 Row(
                     modifier = Modifier.padding(2.dp), // Añade espaciado
                     horizontalArrangement = Arrangement.Start
@@ -132,7 +128,11 @@ fun GameScreen(database: Database, controller: NavController) {
                             .padding(end = 2.dp) // Espacio entre el nombre y el botón
                     )
                     Button(
-                        onClick = { controller.navigate(PlayerRoute) }
+                        onClick = {
+                            // Navegar a PlayerRoute con el gameId como parámetro
+                            controller.navigate("player/${game.id}")
+                        },
+                        modifier = Modifier.testTag("infoButton_${game.id}")
                     ) {
                         Text("Info")
                     }
@@ -165,24 +165,26 @@ fun GameScreen(database: Database, controller: NavController) {
 
 
 
+
 @Composable
-fun PlayerScreen(controller: NavController, database: Database)
-{
-    val player = database.playerQueries.selectById(1).executeAsOne()
-    val game = player.Games?.let { gameId ->
-        database.gameQueries.selectById(gameId).executeAsOneOrNull()
+fun PlayerScreen(controller: NavController, database: Database) {
+    // Obtener el gameId de los argumentos de la ruta
+    val gameId = controller.currentBackStackEntry?.arguments?.getString("gameId")?.toLongOrNull()
+
+    // Verificar si gameId es válido y hacer la consulta
+    val game = gameId?.let {
+        // Asegúrate de que selectById recibe un Long
+        database.gameQueries.selectById(it).executeAsOneOrNull()
     }
-    Row{
-        Column(modifier = Modifier.padding(10.dp)) {
-            if (game != null) {
-                Text("${player.name} : ${game.name}")
-            }
-            else
-            {
-                Text("${player.name} doesn't have a game.")
-            }
-        }
+
+    // Mostrar el juego o un mensaje si no se encontró
+    if (game != null) {
+        Text("Game: ${game.name}")
+    } else {
+        Text("No game found.")
     }
+
+    // Botón de Home
     Box(modifier = Modifier.fillMaxSize()) {
         Button(
             onClick = { controller.navigate(HomeRoute) },
@@ -194,6 +196,8 @@ fun PlayerScreen(controller: NavController, database: Database)
         }
     }
 }
+
+
 
 @Composable
 fun InsertScreen(controller: NavController, database: Database)
