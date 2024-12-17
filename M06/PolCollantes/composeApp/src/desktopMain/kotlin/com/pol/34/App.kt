@@ -130,7 +130,17 @@ fun GameScreen(database: Database, controller: NavController)
         ) {
             Text("Home")
         }
+
+        Button(
+            onClick = { controller.navigate(InsertRoute) },
+            modifier = Modifier
+                .padding(16.dp) // Espaciado
+                .align(Alignment.BottomStart) // Alineación en la parte inferior derecha
+        ) {
+            Text("Insert")
+        }
     }
+
 }
 
 @Composable
@@ -166,7 +176,41 @@ fun PlayerScreen(controller: NavController, database: Database)
 @Composable
 fun InsertScreen(controller: NavController, database: Database)
 {
+    var gameName by remember { mutableStateOf("") }
+    var gamesList by remember { mutableStateOf(listOf<String>()) }
+
     Row{
-        //ToDo
+        Spacer(modifier = Modifier
+            .padding(10.dp))
+        TextField(
+            value = gameName,
+            placeholder = { Text("Nuevo Game")},
+            onValueChange = {newValue -> gameName = newValue}
+        )
+        Spacer(modifier = Modifier
+            .padding(10.dp))
+        Button(
+            onClick = {
+                if (gameName.isNotEmpty()) {
+                    database.gameQueries.insert(gameName) // Inserta en la base de datos
+                    gameName = "" // Limpia el campo
+                    gamesList = database.gameQueries.selectAll()
+                        .executeAsList()
+                        .map { it.name } // Extrae solo el campo "name" de cada objeto Games
+                }
+            }
+        ) {
+            Text("Insert Game")
+        }
+        Box(modifier = Modifier.fillMaxSize()) {
+            Button(
+                onClick = { controller.navigate(HomeRoute) },
+                modifier = Modifier
+                    .padding(16.dp) // Espaciado
+                    .align(Alignment.BottomEnd) // Alineación en la parte inferior derecha
+            ) {
+                Text("Home")
+            }
+        }
     }
 }
