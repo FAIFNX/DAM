@@ -45,8 +45,6 @@ fun insertarDatos(database: Database) {
         database.playerQueries.insert("Pau", "Lopez", 2)
     }
 }
-
-
 @Composable
 fun App(sqlDriver: SqlDriver) {
     MaterialTheme {
@@ -162,10 +160,6 @@ fun GameScreen(database: Database, controller: NavController) {
     }
 }
 
-
-
-
-
 @Composable
 fun PlayerScreen(controller: NavController, database: Database) {
     // Obtener el gameId de los argumentos de la ruta
@@ -178,10 +172,19 @@ fun PlayerScreen(controller: NavController, database: Database) {
     }
 
     // Mostrar el juego o un mensaje si no se encontró
-    if (game != null) {
-        Text("Game: ${game.name}")
-    } else {
-        Text("No game found.")
+
+
+    Column{
+        if (game != null) {
+            Text("Game: ${game.name}")
+        } else {
+            Text("No game found.")
+        }
+        Spacer(modifier = Modifier.padding(10.dp))
+        val player = gameId?.let { database.playerQueries.selectById(it).executeAsOne() }
+        if (player != null) {
+            Text(player.name)
+        }
     }
 
     // Botón de Home
@@ -196,8 +199,6 @@ fun PlayerScreen(controller: NavController, database: Database) {
         }
     }
 }
-
-
 
 @Composable
 fun InsertScreen(controller: NavController, database: Database)
