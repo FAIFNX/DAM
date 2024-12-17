@@ -115,17 +115,37 @@ fun HomeScreen(controller: NavController)
 }
 
 @Composable
-fun GameScreen(database: Database, controller: NavController)
-{
-    val game = database.gameQueries.selectAll().executeAsList()
+fun GameScreen(database: Database, controller: NavController) {
+    val games = database.gameQueries.selectAll().executeAsList()
+
     Column(modifier = Modifier.padding(10.dp)) {
-        LazyColumn { items(game) {game -> Text(game.name)} }
+        LazyColumn {
+            items(games) { game ->
+                Row(
+                    modifier = Modifier.padding(2.dp), // Añade espaciado
+                    horizontalArrangement = Arrangement.Start
+                ) {
+                    Text(
+                        game.name,
+                        modifier = Modifier
+                            .weight(1f) // Ocupa el espacio restante para empujar el botón a la derecha
+                            .padding(end = 2.dp) // Espacio entre el nombre y el botón
+                    )
+                    Button(
+                        onClick = { controller.navigate(PlayerRoute) }
+                    ) {
+                        Text("Info")
+                    }
+                }
+            }
+        }
     }
+
     Box(modifier = Modifier.fillMaxSize()) {
         Button(
             onClick = { controller.navigate(HomeRoute) },
             modifier = Modifier
-                .padding(16.dp) // Espaciado
+                .padding(16.dp)
                 .align(Alignment.BottomEnd) // Alineación en la parte inferior derecha
         ) {
             Text("Home")
@@ -134,14 +154,16 @@ fun GameScreen(database: Database, controller: NavController)
         Button(
             onClick = { controller.navigate(InsertRoute) },
             modifier = Modifier
-                .padding(16.dp) // Espaciado
-                .align(Alignment.BottomStart) // Alineación en la parte inferior derecha
+                .padding(16.dp)
+                .align(Alignment.BottomStart) // Alineación en la parte inferior izquierda
         ) {
             Text("Insert")
         }
     }
-
 }
+
+
+
 
 @Composable
 fun PlayerScreen(controller: NavController, database: Database)
