@@ -38,5 +38,5 @@ Soy un programador junior apasionado por el aprendizaje constante y el desarroll
 
 ## 🏆 Objetivos para 2024
 
-- [ ] Completar un curso avanzado de [tecnología]
+- [ ] Completar un curso avanzado de DAM
 - [ ] Crear una aplicación completa usando [Android Studio || Kolin/Java]

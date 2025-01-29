@@ -50,16 +50,19 @@ public class Servidor {
                                 out.writeUTF(opcions.get(opcion));
                                 int enteredInt = in.readInt(); // Leer un entero del cliente
                                 System.out.println("Client: " + enteredInt);
+                                opcion = 0;
                                 break;
                             case 2:
                                 out.writeUTF(opcions.get(opcion));
                                 double enteredDouble = in.readDouble(); // Leer un double del cliente
                                 System.out.println("Client: " + enteredDouble);
+                                opcion = 0;
                                 break;
                             case 3:
                                 out.writeUTF(opcions.get(opcion));
                                 char enteredChar = in.readChar(); // Leer un carácter del cliente
                                 System.out.println("Client: " + enteredChar);
+                                opcion = 0;
                                 break;
                             case 4:
                                 System.out.println("Saliendo del programa");

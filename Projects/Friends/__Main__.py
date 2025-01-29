@@ -1,0 +1,1 @@
+from Model.Friend import Friend
